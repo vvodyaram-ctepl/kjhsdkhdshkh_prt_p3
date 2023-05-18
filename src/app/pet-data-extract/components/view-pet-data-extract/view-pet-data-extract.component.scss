@@ -1,0 +1,8 @@
+app-view-pet-data-extract{
+    :host ::ng-deep datepicker .form-control{
+        border-radius: 7px;
+    }
+    datepicker .close-icon {
+        top: 1px;
+    }
+}

@@ -1,0 +1,58 @@
+<div class="content-box">
+    <div class="content-hdr">
+        <div class="row">
+            <div class="col-6 block-left-center"> View Duplicate Pet</div>
+        </div>
+    </div>
+    <div class="content-blk">
+        <div class="content-block">
+            <div class="row">
+                <div class="col custom-table">
+                    <table class="table mt-3" *ngFor="let list of viewDuplicatePetArray; let i = index">
+                        <thead class="table-hdr">
+                            <tr>
+                                <th width="5%"></th>
+                                <th width="10%">STREAM</th>
+                                <th width="15%">PET</th>
+                                <th width="15%">STUDY</th>
+                                <th width="15%">ASSET NUMBER</th>
+                                <th width="10%">START DATE</th>
+                                <th width="10%">END DATE</th>
+                                <th width="10%">EXTRACT START DATE</th>
+                                <th width="10%">EXTRACT END DATE</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body">
+                            <tr *ngFor="let stream of list; let j=index">
+                                <td [ngClass]="stream.petType =='P' ?  'primary-pet' : 'duplicate-pet'">
+                                    <span>{{stream.petType}}</span>
+                                  </td>
+                                <td>{{stream.streamId}}</td>
+                                <td>{{stream.petName}}</td>
+                                <td>{{stream.studyName}}</td>
+                                <td>{{stream.assetNumber}}</td>
+                                <td>{{stream.startDate}}</td>
+                                <td>{{stream.endDate}}</td>
+                                <td>{{stream.extractStartDate}}</td>
+                                <td>{{stream.extractEndDate}}</td>
+                            </tr>
+                        </tbody>
+                        <tbody class="table-body" *ngIf="viewDuplicatePetArray?.length == 0">
+                            <tr>
+                                <td>No Records Found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <div class="float-right">
+                        <button class="btn btn-secondary" type="button" (click)="backToList()">Close</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
