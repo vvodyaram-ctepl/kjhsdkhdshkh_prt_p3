@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { of } from 'rxjs/internal/observable/of';
 import { environment } from '../../../../src/environments/environment';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Http, Headers, RequestOptions } from '@angular/http';
 // import 'rxjs/add/operator/do';
 // import 'rxjs/add/operator/catch';
 // import 'rxjs/add/operator/map';

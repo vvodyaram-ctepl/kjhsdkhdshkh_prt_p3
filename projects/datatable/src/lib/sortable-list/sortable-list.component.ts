@@ -10,6 +10,7 @@ import {
   ViewChild
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { SortablejsOptions } from 'ngx-sortablejs';
 
 const noop = () => {};
 

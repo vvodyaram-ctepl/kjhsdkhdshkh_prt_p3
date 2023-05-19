@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DatatableModule } from 'projects/datatable/src/lib/datatable.module';
+import { DatatableModule } from 'projects/datatable/src/public-api';
 import { PetDataExtractRoutingModule } from './pet-data-extract-routing.module';
 import { PetDataExtractComponent } from './components/pet-data-extract/pet-data-extract.component';
 import { ViewPetDataExtractComponent } from './components/view-pet-data-extract/view-pet-data-extract.component';

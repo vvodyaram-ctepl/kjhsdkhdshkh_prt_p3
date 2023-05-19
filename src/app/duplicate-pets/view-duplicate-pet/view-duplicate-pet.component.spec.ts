@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewDuplicatePetComponent } from './view-duplicate-pet.component';
 
@@ -6,7 +6,7 @@ describe('ViewDuplicatePetComponent', () => {
   let component: ViewDuplicatePetComponent;
   let fixture: ComponentFixture<ViewDuplicatePetComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ViewDuplicatePetComponent ]
     })

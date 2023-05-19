@@ -1,11 +1,11 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DeviceTrackingReportComponent } from './device-tracking-report.component';
 
 describe('DeviceTrackingReportComponent', () => {
   let component: DeviceTrackingReportComponent;
   let fixture: ComponentFixture<DeviceTrackingReportComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [DeviceTrackingReportComponent]
     })

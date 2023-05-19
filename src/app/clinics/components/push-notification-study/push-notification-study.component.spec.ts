@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PushNotificationStudyComponent } from './push-notification-study.component';
 
@@ -6,7 +6,7 @@ describe('PushNotificationStudyComponent', () => {
   let component: PushNotificationStudyComponent;
   let fixture: ComponentFixture<PushNotificationStudyComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ PushNotificationStudyComponent ]
     })

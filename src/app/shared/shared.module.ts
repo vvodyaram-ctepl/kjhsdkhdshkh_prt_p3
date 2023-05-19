@@ -23,7 +23,7 @@ import { FileUploadComponent } from '../components/file-upload/file-upload/file-
 import { PhoneMaskDirective } from '../directives/us-phone-mask.directive';
 import { NgxMaskModule } from 'ngx-mask';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
-import { ReportsDatatableModule } from 'projects/reports-datatable/src/lib/reports-datatable.module';
+import { ReportsDatatableModule } from 'projects/reports-datatable/src/lib/datatable.module';
 import { MultiSetComponent } from '../components/multi-set/multi-set.component';
 import { MultiselectComponent } from '../components/multiselect/multiselect.component';
 import { TextareaComponent } from '../components/textarea/textarea.component';

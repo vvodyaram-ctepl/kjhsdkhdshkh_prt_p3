@@ -27,7 +27,7 @@ import * as moment from 'moment';
 
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
-import { DatatableService } from './reports-datatable.service';
+import { DatatableService } from './datatable.service';
 import { Subscription } from 'rxjs';
 import { SortableListComponent } from './sortable-list/sortable-list.component';
 import { Config } from './config';
@@ -50,8 +50,8 @@ export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 
 @Component({
   selector: 'reports-datatable',
-  templateUrl: './reports-datatable.component.html',
-  styleUrls: ['./reports-datatable.component.scss'],
+  templateUrl: './datatable.component.html',
+  styleUrls: ['./datatable.component.scss'],
   encapsulation: ViewEncapsulation.None,
   providers: [CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR, NgbDropdownConfig]
 })

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DatatableService } from './reports-datatable.service';
+import { DatatableService } from './datatable.service';
 
 describe('DatatableService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

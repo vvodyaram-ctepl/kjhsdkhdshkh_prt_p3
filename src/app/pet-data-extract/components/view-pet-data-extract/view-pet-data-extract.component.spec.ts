@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewPetDataExtractComponent } from './view-pet-data-extract.component';
 
@@ -6,7 +6,7 @@ describe('ViewPetDataExtractComponent', () => {
   let component: ViewPetDataExtractComponent;
   let fixture: ComponentFixture<ViewPetDataExtractComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ViewPetDataExtractComponent ]
     })

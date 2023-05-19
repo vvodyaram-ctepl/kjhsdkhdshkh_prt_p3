@@ -6,7 +6,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClinicalNotificationService extends BaseService {
-  private externalPrelude!: any;
+  private externalPrelude: any;
   private externalPreludeDataOservable = new BehaviorSubject<any>(this.externalPrelude);
   public externalPrelude$ = this.externalPreludeDataOservable.asObservable();
 

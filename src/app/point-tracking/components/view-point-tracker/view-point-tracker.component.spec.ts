@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewPointTrackerComponent } from './view-point-tracker.component';
 
@@ -6,7 +6,7 @@ describe('ViewPointTrackerComponent', () => {
   let component: ViewPointTrackerComponent;
   let fixture: ComponentFixture<ViewPointTrackerComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ViewPointTrackerComponent ]
     })

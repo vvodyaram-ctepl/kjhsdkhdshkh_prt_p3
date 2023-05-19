@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MobileAppFeedbackComponent } from './mobile-app-feedback.component';
 
@@ -6,7 +6,7 @@ describe('MobileAppFeedbackComponent', () => {
   let component: MobileAppFeedbackComponent;
   let fixture: ComponentFixture<MobileAppFeedbackComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MobileAppFeedbackComponent ]
     })

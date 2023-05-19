@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ValidationMessageComponent } from './validation-message.component';
 
@@ -6,7 +6,7 @@ describe('ValidationMessageComponent', () => {
   let component: ValidationMessageComponent;
   let fixture: ComponentFixture<ValidationMessageComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ValidationMessageComponent ]
     })

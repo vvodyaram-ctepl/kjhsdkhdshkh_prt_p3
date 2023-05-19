@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DatatableComponent } from './reports-datatable.component';
+import { DatatableComponent } from './datatable.component';
 import { SortableListComponent } from './sortable-list/sortable-list.component';
 import { SanitizeHtmlPipe } from './sanitize-html.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';

@@ -6,6 +6,7 @@ import { ListSupportMaterialComponent } from './components/list-support-material
 import { AddSupportMaterialComponent } from './components/add-support-material/add-support-material.component';
 import { ViewSupportMaterialComponent } from './components/view-support-material/view-support-material.component';
 import { SharedModule } from '../shared/shared.module';
+import { DatatableModule } from 'projects/datatable/src/public-api';
 import { EditSupportMaterialComponent } from './components/edit-support-material/edit-support-material.component';
 
 
@@ -14,6 +15,7 @@ import { EditSupportMaterialComponent } from './components/edit-support-material
   imports: [
     CommonModule,
     SupportMaterialRoutingModule,
+    DatatableModule,
     SharedModule
   ]
 })

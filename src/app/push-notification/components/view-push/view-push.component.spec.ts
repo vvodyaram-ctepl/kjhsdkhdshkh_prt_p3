@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewPushComponent } from './view-push.component';
 
@@ -6,7 +6,7 @@ describe('ViewPushComponent', () => {
   let component: ViewPushComponent;
   let fixture: ComponentFixture<ViewPushComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ViewPushComponent ]
     })

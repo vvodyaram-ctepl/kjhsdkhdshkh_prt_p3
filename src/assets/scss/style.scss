@@ -1076,14 +1076,12 @@ overflow: hidden;
   ////
 }
 .pet-carousel {
-  .nav-tabs {
+  .nav-pills {
     background: #f2f3f6;
     .nav-link {
       border-radius: 05px 5px 0px 0px;
       color: #000000;
       font-weight: 600;
-      text-transform: unset !important;
-      font-size: 16px;
       &.active {
         background: #39dbb7;
         color: #ffffff;
@@ -1095,7 +1093,6 @@ overflow: hidden;
     // min-height:80px;
     min-height: 26px;
     border-radius: 0px 0px 0px 5px;
-    margin-top: 0 !important;
   }
   .study-cnt-blk {
     cursor: pointer;

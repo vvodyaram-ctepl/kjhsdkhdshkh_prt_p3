@@ -275,14 +275,27 @@
                     </div> -->
             <div class="pet-carousel">
                 <!-- {{tabset.activeId}} -->
-                <ul ngbNav #tabset="ngbNav" [(activeId)]="active" class="nav-tabs" (navChange)="fetchNews($event)">
-                    <li title="Current Studies" [ngbNavItem]="'ngb-tab-0'">
-                        <a ngbNavLink>Current Studies</a>
-                        <ng-template ngbNavContent *ngIf="data.length > 0">
+                <ngb-tabset type="pills" #tabset="ngbTabset" (tabChange)="fetchNews($event)">
+                    <ngb-tab title="Current Studies" id="ngb-tab-0">
+                        <ng-template ngbTabContent *ngIf="data.length > 0">
                             <ngb-carousel #carouselMain [showNavigationIndicators]="false">
                                 <ng-template ngbSlide *ngFor="let item of data;let i = index" id="{{i}}">
                                     <div class="study-cnt px-0" *ngFor="let listItem of item;let j = index"
                                         [class.current-study]="listItem.petStudyId == selectedRow1">
+                                        <!-- {{listItem | json}} -->
+
+                                        <!-- <div [class.current-study]="listItem.studyId == selectedRow1" class="study-cnt-blk" (click)="selectedStudy(listItem.studyId)" *ngIf="(j == 0)">
+                                                <div class="study-name-cnt">Study Name</div>
+                                                <div class="study-name-info">{{listItem.studyName}}</div>
+                                                <div class="study-date-info">
+                                                    <span>Start Date</span>{{listItem.startDate}}
+                                                </div>
+                                                <div class="study-date-info">
+                                                    <span>End Date</span>{{listItem.endDate}}
+                                                </div>
+                                                <button *ngIf="listItem.studyId == selectedRow1" class="btn btn-primary btn-pink disassociate" (click)="disassociate(listItem.studyId,listItem.studyName)">Disassociate
+                                                    Study</button>
+                                            </div> -->
                                         <div class="study-cnt-blk"
                                             (click)="selectedStudy(listItem.petStudyId);activeStudy(listItem.petStudyId);">
                                             <div class="study-name-cnt">Study Name</div>
@@ -292,6 +305,8 @@
                                                 listItem.startDate : '-'}}
                                             </div>
                                             <div class="study-date-info mb-1">
+                                                <!-- <span>End Date</span>{{listItem.endDate != '' ?
+                                                listItem.endDate : '-'}} -->
                                             </div>
                                             <button
                                                 *ngIf="listItem.petStudyId == selectedRow1 && RWFlag && listItem.studyId != 2901"
@@ -303,17 +318,17 @@
                                 </ng-template>
                             </ngb-carousel>
                         </ng-template>
-                        <ng-template ngbNavContent *ngIf="data.length == 0">
+                        <ng-template ngbTabContent *ngIf="data.length == 0">
                             <div style="text-align: center;color:red;line-height:2;"> No Current Studies Found</div>
                         </ng-template>
-                    </li>
-                    <li title="Archived Studies" [ngbNavItem]="'ngb-tab-1'">
-                        <a ngbNavLink>Archived Studies</a>
-                        <ng-template ngbNavContent *ngIf="dataArchive.length > 0">
+                    </ngb-tab>
+                    <ngb-tab title="Archived Studies" id="ngb-tab-1">
+                        <ng-template ngbTabContent *ngIf="dataArchive.length > 0">
                             <ngb-carousel #carousel1 [showNavigationIndicators]="false">
                                 <ng-template ngbSlide *ngFor="let item of dataArchive;let i = index" id="{{i}}">
                                     <div class="study-cnt px-0 archived" *ngFor="let listItem of item"
                                         [class.current-study]="listItem.petStudyId == selectedRow1">
+                                        <!-- {{listItem | json}} -->
                                         <div class="study-cnt-blk"
                                             [class.current-study]="listItem.petStudyId == selectedRow1"
                                             (click)="selectedStudy(listItem.petStudyId);activeStudy(listItem.petStudyId);">
@@ -333,61 +348,11 @@
                                 </ng-template>
                             </ngb-carousel>
                         </ng-template>
-                        <ng-template ngbNavContent class="panel-no-data" *ngIf="dataArchive.length == 0">
+                        <ng-template ngbTabContent class="panel-no-data" *ngIf="dataArchive.length == 0">
                             <div style="text-align: center;color:red;"> No Archive Studies Found</div>
                         </ng-template>
-                    </li>
-                </ul>
-                <!-- <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-                    <li [ngbNavItem]="1">
-                        <a ngbNavLink>One</a>
-                        <ng-template ngbNavContent>
-                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown
-                                aliqua, retro synth
-                                master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
-                                Reprehenderit butcher retro
-                                keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-                                squid. Aliquip placeat
-                                salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate
-                                nisi qui.</p>
-                        </ng-template>
-                    </li>
-                    <li [ngbNavItem]="2">
-                        <a ngbNavLink>Two</a>
-                        <ng-template ngbNavContent>
-                            <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan
-                                four loko
-                                farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer
-                                mlkshk aliquip jean shorts
-                                ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna
-                                delectus mollit. Keytar
-                                helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack
-                                odio cillum wes anderson
-                                8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel.
-                                Art party scenester
-                                stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-                        </ng-template>
-                    </li>
-                    <li [ngbNavItem]="3">
-                        <a ngbNavLink>Three</a>
-                        <ng-template ngbNavContent>
-                            <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id
-                                diam. Nulla facilisi.
-                                Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget
-                                tincidunt eu, congue et odio.
-                                Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus
-                                ultrices et. Sed diam urna,
-                                egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus
-                                faucibus nisl enim, nec
-                                tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius
-                                natoque penatibus et
-                                magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem
-                                aliquet ultricies in eget
-                                neque. Phasellus nec tortor vel tellus pulvinar feugiat.</p>
-                        </ng-template>
-                    </li>
-                </ul> -->
-                <div [ngbNavOutlet]="tabset" class="mt-2"></div>
+                    </ngb-tab>
+                </ngb-tabset>
             </div>
             <app-view-patient-cards *ngIf="!showTabsPage && showPanelist" (showTabs)="showTabs($event)" [petId]="petId"
                 [studyId]="studyId">

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SupportRoutingModule } from './support-routing.module';
 import { SupportComponent } from './components/support/support.component';
+import { DatatableModule } from 'projects/datatable/src/public-api';
 import { AddSupportComponent } from './components/support/add-support/add-support.component';
 import { ViewSupportComponent } from './components/support/view-support/view-support.component';
 import { SharedModule } from '../shared/shared.module';
@@ -15,6 +16,7 @@ import { TicketHistoryComponent } from './components/support/view-customer-suppo
   imports: [
     CommonModule,
     SupportRoutingModule,
+    DatatableModule,
     SharedModule
   ]
 })

@@ -6,6 +6,7 @@ import { ListPatientsComponent } from './components/list-patients/list-patients.
 import { ViewPatientComponent } from './components/view-patient/view-patient.component';
 import { AddNewPatientComponent } from './components/add-new-patient/add-new-patient.component';
 import { SharedModule } from '../shared/shared.module';
+import { DatatableModule } from 'projects/datatable/src/public-api';
 import { PetInfoComponent } from './components/pet-info/pet-info.component';
 import { PetParentInfoComponent } from './components/pet-parent-info/pet-parent-info.component';
 import { PetReviewComponent } from './components/pet-review/pet-review.component';
@@ -39,6 +40,7 @@ import { PetAssetComponent } from './components/pet-asset/pet-asset.component';
     CommonModule,
     PatientRoutingModule,
     SharedModule,
+    DatatableModule,
     ChartsModule,
     VirtualScrollerModule,
   ]

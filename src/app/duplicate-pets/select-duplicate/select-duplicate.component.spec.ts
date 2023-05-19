@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SelectDuplicateComponent } from './select-duplicate.component';
 
@@ -6,7 +6,7 @@ describe('SelectDuplicateComponent', () => {
   let component: SelectDuplicateComponent;
   let fixture: ComponentFixture<SelectDuplicateComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SelectDuplicateComponent ]
     })

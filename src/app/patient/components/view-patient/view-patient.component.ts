@@ -73,8 +73,6 @@ export class ViewPatientComponent implements OnInit {
 
 
   queryParams: any = {};
-
-  active;
   // private list = [
   //   {
   //     "studyName": "Hill's Team Marvin1",
@@ -397,7 +395,12 @@ export class ViewPatientComponent implements OnInit {
     this.selectedRow1 = petStudyId;
   }
   fetchNews(evt: any) {
-    if (this.active == 'ngb-tab-0') {
+    console.log("fetcchh", evt); // has nextId that you can check to invoke the desired function
+
+
+    let active = evt.activeId;
+    this.tabset.select(active)
+    if (active == 'ngb-tab-0') {
       let selectionStudyId: any;
       if (this.archList && this.archList.length > 0) {
         selectionStudyId = this.archList[0].petStudyId;
@@ -406,7 +409,7 @@ export class ViewPatientComponent implements OnInit {
       }
 
     }
-    else if (this.active == 'ngb-tab-1') {
+    else if (active == 'ngb-tab-1') {
       let selectionStudyId: any;
       if (this.list && this.list.length > 0) {
         selectionStudyId = this.list[0].petStudyId;
